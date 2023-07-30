@@ -7,4 +7,9 @@
         public string Author { get; set; }
         public string Content { get; set; }
     }
+
+    public class BlogListModel
+    {
+        public List<BlogViewModel> Data { get; set; }
+    }
 }

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
-namespace DotNetCoreMediatR.Features.Blog
+namespace DotNetCoreMediatR.Features.Blog.Create
 {
     public class BlogEventHandler : IRequestHandler<BlogMessage, BlogViewModel>
     {

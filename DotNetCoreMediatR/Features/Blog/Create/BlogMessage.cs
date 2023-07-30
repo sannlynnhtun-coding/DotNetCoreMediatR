@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace DotNetCoreMediatR.Features.Blog
+namespace DotNetCoreMediatR.Features.Blog.Create
 {
     public class BlogMessage : IRequest<BlogViewModel>
     {

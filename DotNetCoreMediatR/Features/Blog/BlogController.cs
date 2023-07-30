@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using DotNetCoreMediatR.Features.Blog.Create;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,20 @@ namespace DotNetCoreMediatR.Features.Blog
         {
             _mediator = mediator;
             _logger = logger;
+        }
+
+        [HttpGet("{pageNo}/{pageSize}")]
+        public async Task<IActionResult> Get(int pageNo, int pageSize)
+        {
+            var response = await _mediator.Send(new BlogGetMessage
+            {
+                PageSetting = new PageSettingModel
+                {
+                    PageNo = pageNo,
+                    PageSize = pageSize
+                }
+            });
+            return Ok(response);
         }
 
         [HttpPost]
